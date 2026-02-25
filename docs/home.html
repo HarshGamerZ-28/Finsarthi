@@ -688,7 +688,7 @@ Get instant analysis and smart recommendations to grow financially.</p>
 
         <div class="card" id="card2">
             <h3>Know About Finance</h3>
-            <button class="btn-primary">Learn More</button>
+            <button class="btn-primary" id="learnMoreBtn">Learn More</button>
         </div>
 
         <div class="card" id="card3">
@@ -764,14 +764,15 @@ Get instant analysis and smart recommendations to grow financially.</p>
 </div>
 </div>
 <script>
+
     // Redirect to knowledge.html when Learn More button is clicked
-document.getElementById('learnMoreBtn').addEventListener('click', function() {
-    window.location.href = 'knowledge.html';
-});
-    // Redirect to chat.html when chatbot button is clicked
-        document.getElementById('chatbotCardBtn').addEventListener('click', function() {
-            window.location.href = 'chatbot.html';
-        });
+    document.getElementById('learnMoreBtn').addEventListener('click', function() {
+        window.location.href = 'knowledge.html';
+    });
+    // Redirect to chatbot.html when chatbot button is clicked
+    document.getElementById('chatbotCardBtn').addEventListener('click', function() {
+        window.location.href = 'chatbot.html';
+    });
 
         // Sidebar logic
         const openBtn = document.getElementById("openAccountBtn");
