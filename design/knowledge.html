@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Finsarthi Knowledge Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">FS</div>
+    <div class="menu">
+      <span>🏠</span>
+      <span>💬</span>
+      <span>🔔</span>
+      <span>📚</span>
+      <span>⚙️</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+
+    <h1>Finsarthi Knowledge Hub</h1>
+
+    <!-- Progress Section -->
+    <div class="progress-box">
+      <div>
+        <h3>Learning Progress</h3>
+        <p><span id="completedCount">0</span>/10 Chapters Completed</p>
+      </div>
+      <div class="xp">
+        XP: <span id="xpPoints">0</span>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filters">
+      <button class="active" onclick="filterCards('all')">All</button>
+      <button onclick="filterCards('investing')">Investing</button>
+      <button onclick="filterCards('budgeting')">Budgeting</button>
+      <button onclick="filterCards('crypto')">Crypto</button>
+      <button onclick="filterCards('taxation')">Taxation</button>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards" id="cardContainer">
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
