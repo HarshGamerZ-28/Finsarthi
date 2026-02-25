@@ -1,803 +1,804 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> <meta charset="UTF-8"> 
+    <title>HOME</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<style> 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: #0B0F17;
+        color: #FFFFFF;
+        position: relative;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <title>HOME</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    body::before {
+        content: "";
+        position: fixed;
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(circle, rgba(124,58,237,0.35), transparent 70%);
+        top: -200px;
+        left: -200px;
+        z-index: -1;
+        animation: floatGlow 20s ease-in-out infinite alternate;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #0B0F17;
-            color: #FFFFFF;
-            position: relative;
-            overflow-x: hidden;
-        }
+    body::after {
+        content: "";
+        position: fixed;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(168,85,247,0.3), transparent 70%);
+        bottom: -200px;
+        right: -200px;
+        z-index: -1;
+        animation: floatGlow 25s ease-in-out infinite alternate-reverse;
+    }
 
-        body::before {
-            content: "";
-            position: fixed;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.35), transparent 70%);
-            top: -200px;
-            left: -200px;
-            z-index: -1;
-            animation: floatGlow 20s ease-in-out infinite alternate;
-        }
+    @keyframes floatGlow {
+        from { transform: translateY(0px); }
+        to { transform: translateY(60px); }
+    }
 
-        body::after {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.3), transparent 70%);
-            bottom: -200px;
-            right: -200px;
-            z-index: -1;
-            animation: floatGlow 25s ease-in-out infinite alternate-reverse;
-        }
+    .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
 
-        @keyframes floatGlow {
-            from {
-                transform: translateY(0px);
-            }
+    .navbar-wrapper {
+        background: #111827;
+        border-radius: 32px;
+        padding: 20px 30px;
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 0 40px rgba(124, 58, 237, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-            to {
-                transform: translateY(60px);
-            }
-        }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 20px;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #7C3AED, #A855F7);
+    }
 
-        .navbar-wrapper {
-            background: #111827;
-            border-radius: 32px;
-            padding: 20px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 40px rgba(124, 58, 237, 0.25);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    .nav-center {
+        display: flex;
+        gap: 40px;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 20px;
-        }
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+        font-size: 14px;
+        color: #9CA3AF;
+        padding: 6px 10px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, color 120ms ease;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
 
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #7C3AED, #A855F7);
-        }
+    .nav-item:hover {
+        transform: translateY(2px);
+        background: rgba(255,255,255,0.03);
+        color: #FFFFFF;
+        box-shadow: inset 0 2px 8px rgba(0,0,0,0.45);
+    }
 
-        .nav-center {
-            display: flex;
-            gap: 40px;
-        }
+    .nav-item:active {
+        transform: translateY(4px) scale(0.995);
+        box-shadow: none;
+    }
 
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            text-align: center;
-            font-size: 14px;
-            color: #9CA3AF;
-            padding: 6px 10px;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, color 120ms ease;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-        }
+    .nav-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 20px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.05);
+        margin: 0 auto 6px;
+    }
 
-        .nav-item:hover {
-            transform: translateY(2px);
-            background: rgba(255, 255, 255, 0.03);
-            color: #FFFFFF;
-            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.45);
-        }
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 
-        .nav-item:active {
-            transform: translateY(4px) scale(0.995);
-            box-shadow: none;
-        }
+    .btn-primary {
+        background: linear-gradient(135deg, #7C3AED, #A855F7);
+        color: #ffffff;
+        border: none;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+        transition: 0.3s ease;
+    }
 
-        .nav-icon {
-            width: 28px;
-            height: 28px;
-            font-size: 20px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            margin: 0 auto 6px;
-        }
+    .btn-primary:hover {
+        transform: translateY(-2px);
+    }
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+    .btn-arrow {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: #1F2937;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+    }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #7C3AED, #A855F7);
-            color: #ffffff;
-            border: none;
-            padding: 12px 22px;
-            border-radius: 999px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
-            transition: 0.3s ease;
-        }
+    .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 40px;
+        margin-top: 40px;
+    }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-        }
+    .hero-card {
+        background: #111827 url('graph.jpeg') center/cover no-repeat;
+        position: relative;
+        border-radius: 32px;
+        padding: 50px;
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 0 40px rgba(124, 58, 237, 0.25);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.18s cubic-bezier(.4,1.5,.5,1), box-shadow 0.18s cubic-bezier(.4,1.5,.5,1);
+        overflow: hidden;
+    }
 
-        .btn-arrow {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: #1F2937;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: bold;
-        }
+    .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(17,24,39,0.78);
+        z-index: 0;
+    }
+    .hero-card > * {
+        position: relative;
+        z-index: 1;
+    }
 
+    .hero-card:hover {
+        transform: translateY(-8px) scale(1.035);
+        box-shadow: 0 8px 48px 0 rgba(124,58,237,0.35), 0 1.5px 8px 0 rgba(0,0,0,0.18);
+        z-index: 2;
+    }
+
+    .hero-card h1 {
+        font-size: 48px;
+        line-height: 1.1;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .hero-card p {
+        color: #9CA3AF;
+        margin-bottom: 30px;
+        max-width: 420px;
+    }
+
+    .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    .stat-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .stat-text {
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .stat-sub {
+        font-size: 14px;
+        color: #9CA3AF;
+    }
+
+    .avatars {
+        display: flex;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.08);
+        border: 2px solid #111827;
+        margin-left: -10px;
+    }
+
+    .hero-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 25px; /* match your design */
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* makes image fill full box */
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+    .bottom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .card {
+        background: #111827;
+        border-radius: 32px;
+        padding: 30px;
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 0 40px rgba(124, 58, 237, 0.25);
+        transition: transform 0.18s cubic-bezier(.4,1.5,.5,1), box-shadow 0.18s cubic-bezier(.4,1.5,.5,1);
+    }
+
+    .card:hover {
+        transform: translateY(-8px) scale(1.025);
+        box-shadow: 0 8px 48px 0 rgba(124,58,237,0.35), 0 1.5px 8px 0 rgba(0,0,0,0.18);
+        z-index: 2;
+    }
+
+    .card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    
+
+    @media (max-width: 992px) {
         .hero {
-            display: grid;
-            grid-template-columns: 1.1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .hero-card {
-            background: #111827;
-            border-radius: 32px;
-            padding: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 40px rgba(124, 58, 237, 0.25);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.18s cubic-bezier(.4, 1.5, .5, 1), box-shadow 0.18s cubic-bezier(.4, 1.5, .5, 1);
-        }
-
-        .hero-card:hover {
-            transform: translateY(-8px) scale(1.035);
-            box-shadow: 0 8px 48px 0 rgba(124, 58, 237, 0.35), 0 1.5px 8px 0 rgba(0, 0, 0, 0.18);
-            z-index: 2;
-        }
-
-        .hero-card h1 {
-            font-size: 48px;
-            line-height: 1.1;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .hero-card p {
-            color: #9CA3AF;
-            margin-bottom: 30px;
-            max-width: 420px;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .stat-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .stat-text {
-            font-size: 28px;
-            font-weight: 700;
-        }
-
-        .stat-sub {
-            font-size: 14px;
-            color: #9CA3AF;
-        }
-
-        .avatars {
-            display: flex;
-        }
-
-        .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            border: 2px solid #111827;
-            margin-left: -10px;
-        }
-
-        .hero-image {
-            border-radius: 32px;
-            background: linear-gradient(135deg, #1F2937, #111827);
-            min-height: 420px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 40px rgba(124, 58, 237, 0.25);
-            transition: transform 0.18s cubic-bezier(.4, 1.5, .5, 1), box-shadow 0.18s cubic-bezier(.4, 1.5, .5, 1);
-        }
-
-        .hero-image:hover {
-            transform: translateY(-8px) scale(1.025);
-            box-shadow: 0 8px 48px 0 rgba(124, 58, 237, 0.35), 0 1.5px 8px 0 rgba(0, 0, 0, 0.18);
-            z-index: 2;
+            grid-template-columns: 1fr;
         }
 
         .bottom-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .nav-center {
+            display: none;
         }
 
-        .card {
-            background: #111827;
-            border-radius: 32px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 40px rgba(124, 58, 237, 0.25);
-            transition: transform 0.18s cubic-bezier(.4, 1.5, .5, 1), box-shadow 0.18s cubic-bezier(.4, 1.5, .5, 1);
+        .bottom-grid {
+            grid-template-columns: 1fr;
         }
+    }
 
-        .card:hover {
-            transform: translateY(-8px) scale(1.025);
-            box-shadow: 0 8px 48px 0 rgba(124, 58, 237, 0.35), 0 1.5px 8px 0 rgba(0, 0, 0, 0.18);
-            z-index: 2;
+    .footer {
+margin-top: 80px;
+padding: 60px 20px 30px;
+background: #0F172A;
+border-top: 1px solid rgba(255,255,255,0.08);
+box-shadow: 0 -10px 40px rgba(124,58,237,0.2);
+}
+
+.footer-container {
+max-width: 1200px;
+margin: auto;
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 2fr;
+gap: 40px;
+}
+
+.footer h2,
+.footer h3 {
+margin-bottom: 15px;
+font-weight: 700;
+}
+
+.footer p {
+color: #9CA3AF;
+line-height: 1.6;
+}
+
+.footer-links ul {
+list-style: none;
+}
+
+.footer-links li {
+color: #9CA3AF;
+margin-bottom: 10px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.footer-links li:hover {
+color: #A855F7;
+}
+
+.footer-newsletter .newsletter-box {
+display: flex;
+gap: 10px;
+margin-top: 10px;
+}
+
+.footer-newsletter input {
+flex: 1;
+padding: 12px;
+border-radius: 10px;
+border: 1px solid rgba(255,255,255,0.08);
+background: #111827;
+color: #ffffff;
+outline: none;
+}
+
+.footer-newsletter button {
+padding: 12px 18px;
+border-radius: 10px;
+border: none;
+background: linear-gradient(135deg, #7C3AED, #A855F7);
+color: #fff;
+cursor: pointer;
+box-shadow: 0 0 15px rgba(168,85,247,0.6);
+transition: 0.3s;
+}
+
+.footer-newsletter button:hover {
+transform: translateY(-2px);
+}
+
+.footer-bottom {
+text-align: center;
+margin-top: 40px;
+color: #6B7280;
+font-size: 14px;
+}
+
+@media (max-width: 992px) {
+.footer-container {
+grid-template-columns: 1fr 1fr;
+}
+}
+
+@media (max-width: 600px) {
+.footer-container {
+grid-template-columns: 1fr;
+}
+}
+
+/* Overlay */
+#sidebarOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+/* Sidebar */
+#accountSidebar {
+    position: fixed;
+    top: 0;
+    right: -40%;
+    width: 35%;
+    height: 100vh;
+    background: white;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    transition: 0.4s cubic-bezier(.77,0,.18,1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Active state */
+#accountSidebar.active {
+    right: 0;
+}
+
+#sidebarOverlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sidebar Content */
+.sidebar-content {
+    width: 80%;
+    text-align: center;
+}
+
+/* Profile Section */
+.profile-section {
+    margin-bottom: 40px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7C3AED, #A855F7);
+    margin: 0 auto 15px auto;
+}
+
+.profile-section h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Buttons */
+.sidebar-buttons button {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background: #F3F4F6;
+}
+
+.sidebar-buttons button:hover {
+    background: #E5E7EB;
+}
+
+.sidebar-buttons .logout {
+    background: #7C3AED;
+    color: white;
+}
+
+.sidebar-buttons .logout:hover {
+    background: #6D28D9;
+}
+
+/* Responsive */
+@media(max-width: 1024px){
+    #accountSidebar{
+        width: 45%;
+        right: -45%;
+    }
+}
+
+@media(max-width: 768px){
+    #accountSidebar{
+        width: 75%;
+        right: -75%;
+    }
+}
+/* Elegant animated chatbot button */
+    .chatbot-btn {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, #7C3AED, #A855F7, #22D3EE);
+        box-shadow: 0 4px 24px rgba(124,58,237,0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.18s cubic-bezier(.4,1.5,.5,1), box-shadow 0.18s cubic-bezier(.4,1.5,.5,1);
+        animation: chatbotPulse 2.2s infinite linear alternate;
+        position: relative;
+        z-index: 1;
+        outline: none;
+    }
+    .chatbot-btn:hover {
+        transform: scale(1.09) rotate(-3deg);
+        box-shadow: 0 8px 32px 0 rgba(124,58,237,0.28);
+    }
+    @keyframes chatbotPulse {
+        0% {
+            filter: hue-rotate(0deg) brightness(1);
+            box-shadow: 0 4px 24px rgba(124,58,237,0.18);
         }
-
-        .card h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
+        50% {
+            filter: hue-rotate(60deg) brightness(1.08);
+            box-shadow: 0 8px 32px 0 rgba(168,85,247,0.28);
         }
-
-        .user-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
+        100% {
+            filter: hue-rotate(120deg) brightness(1.12);
+            box-shadow: 0 12px 40px 0 rgba(34,211,238,0.22);
         }
+    }
+    /* Card1 background with overlay for chatbot */
+    #card1 {
+        background: #111827 url('chatbot.jpeg') center/cover no-repeat;
+        position: relative;
+        overflow: hidden;
+    }
+    #card1::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(17,24,39,0.78);
+        z-index: 0;
+    }
+    #card1 > * {
+        position: relative;
+        z-index: 1;
+    }
+    /* Card2 background with overlay */
+    #card2 {
+        background: #111827 url('know-about-finance.png') center/cover no-repeat;
+        position: relative;
+        overflow: hidden;
+    }
+    #card2::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(17,24,39,0.3);
+        z-index: 0;
+    }
+    #card2 > * {
+        position: relative;
+        z-index: 1;
+    }
 
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    /* Card3 background with overlay */
+    #card3 {
+        background: #111827 url('what-to-buy.png') center/cover no-repeat;
+        position: relative;
+        overflow: hidden;
+    }
+    #card3::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(17,24,39,0.3);
+        z-index: 0;
+    }
+    #card3 > * {
+        position: relative;
+        z-index: 1;
+    }
 
-        .user-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-        }
 
-        .user-name {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .user-desc {
-            font-size: 12px;
-            color: #9CA3AF;
-        }
-
-        .plus-btn {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #A855F7;
-        }
-
-        .platform-image {
-            height: 120px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, #1F2937, #111827);
-            margin-bottom: 20px;
-        }
-
-        .try-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #7C3AED, #A855F7);
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
-        }
-
-        .app-icons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .app-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .tag {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 6px 12px;
-            border-radius: 999px;
-            font-size: 12px;
-            margin-bottom: 10px;
-            color: #A855F7;
-            font-weight: 600;
-        }
-
-        .coin-placeholder {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1F2937, #111827);
-            margin: 20px auto;
-        }
-
-        .card p.small {
-            font-size: 12px;
-            color: #9CA3AF;
-            margin-top: 10px;
-        }
-
-        @media (max-width: 992px) {
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .bottom-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .nav-center {
-                display: none;
-            }
-
-            .bottom-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .footer {
-            margin-top: 80px;
-            padding: 60px 20px 30px;
-            background: #0F172A;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 -10px 40px rgba(124, 58, 237, 0.2);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 2fr;
-            gap: 40px;
-        }
-
-        .footer h2,
-        .footer h3 {
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .footer p {
-            color: #9CA3AF;
-            line-height: 1.6;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            color: #9CA3AF;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .footer-links li:hover {
-            color: #A855F7;
-        }
-
-        .footer-newsletter .newsletter-box {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .footer-newsletter input {
-            flex: 1;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: #111827;
-            color: #ffffff;
-            outline: none;
-        }
-
-        .footer-newsletter button {
-            padding: 12px 18px;
-            border-radius: 10px;
-            border: none;
-            background: linear-gradient(135deg, #7C3AED, #A855F7);
-            color: #fff;
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
-            transition: 0.3s;
-        }
-
-        .footer-newsletter button:hover {
-            transform: translateY(-2px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 40px;
-            color: #6B7280;
-            font-size: 14px;
-        }
-
-        @media (max-width: 992px) {
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Overlay */
-        #sidebarOverlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(4px);
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.3s ease;
-            z-index: 999;
-        }
-
-        /* Sidebar */
-        #accountSidebar {
-            position: fixed;
-            top: 0;
-            right: -40%;
-            width: 35%;
-            height: 100vh;
-            background: white;
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
-            border-top-left-radius: 24px;
-            border-bottom-left-radius: 24px;
-            transition: 0.4s cubic-bezier(.77, 0, .18, 1);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Active state */
-        #accountSidebar.active {
-            right: 0;
-        }
-
-        #sidebarOverlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Sidebar Content */
-        .sidebar-content {
-            width: 80%;
-            text-align: center;
-        }
-
-        /* Profile Section */
-        .profile-section {
-            margin-bottom: 40px;
-        }
-
-        .profile-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #7C3AED, #A855F7);
-            margin: 0 auto 15px auto;
-        }
-
-        .profile-section h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: #111827;
-        }
-
-        /* Buttons */
-        .sidebar-buttons button {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 16px;
-            border-radius: 12px;
-            border: none;
-            font-size: 15px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.3s ease;
-            background: #F3F4F6;
-        }
-
-        .sidebar-buttons button:hover {
-            background: #E5E7EB;
-        }
-
-        .sidebar-buttons .logout {
-            background: #7C3AED;
-            color: white;
-        }
-
-        .sidebar-buttons .logout:hover {
-            background: #6D28D9;
-        }
-
-        /* Responsive */
-        @media(max-width: 1024px) {
-            #accountSidebar {
-                width: 45%;
-                right: -45%;
-            }
-        }
-
-        @media(max-width: 768px) {
-            #accountSidebar {
-                width: 75%;
-                right: -75%;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <div class="navbar-wrapper">
-            <div class="logo">
-                <div class="logo-icon"></div>
-                Banking
-            </div>
-
-            <div class="nav-center">
-                <a class="nav-item" href="home.html">
-                    <div class="nav-icon">⌂</div>
-                    Home
-                </a>
-                <a class="nav-item" href="#services">
-                    <div class="nav-icon"></div>
-                    Services
-                </a>
-                <a class="nav-item" href="#pricing">
-                    <div class="nav-icon"></div>
-                    Pricing
-                </a>
-                <a class="nav-item" href="#features">
-                    <div class="nav-icon"></div>
-                    Features
-                </a>
-            </div>
-
-            <div class="nav-right">
-                <button class="btn-primary" id="openAccountBtn">Open Account</button>
-                <div class="btn-arrow">→</div>
-            </div>
+</style>
+    
+    
+    
+</head> <body> <div class="container">
+    <div class="navbar-wrapper">
+        <div class="logo">
+            <div class="logo-icon" style="background:#fff;box-shadow:0 0 8px rgba(255,255,255,0.25);">
+                <img src="finsarthi_logo.png" alt="FinSarthi Logo" style="width:100%;height:100%;border-radius:10px;object-fit:contain;" />
+            </div>FinSarthi
         </div>
 
-        <div class="hero">
-            <div class="hero-card">
-                <div>
-                    <h1>Control your<br>finance<br>future easily</h1>
-                    <p>Manage your money effortlessly with our powerful digital banking solutions designed for your
-                        financial growth.</p>
-                    <div class="hero-actions">
-                        <button class="btn-primary">Open Account</button>
-                        <div class="btn-arrow">→</div>
-                    </div>
-                </div>
-                <div class="stat-row">
-                    <div>
-                        <div class="stat-text">15 Million+</div>
-                        <div class="stat-sub">Trusted customers worldwide</div>
-                    </div>
-                    <div class="avatars">
-                        <div class="avatar"></div>
-                        <div class="avatar"></div>
-                        <div class="avatar"></div>
-                        <div class="avatar"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-image"></div>
+        <div class="nav-center">
+            <a class="nav-item" href="#home" id="homeReloadBtn">
+                <div class="nav-icon">⌂</div>
+                Home
+            </a>
+            <a class="nav-item" href="#footer">
+                <div class="nav-icon">i</div>
+                About Us
+            </a>
+            <a class="nav-item" href="#pricing">
+                <div class="nav-icon">₹</div>
+                Pricing
+            </a>
+                        <a class="nav-item" href="#features">
+                                <div class="nav-icon">
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="4" width="22" height="1" rx="1.2" fill="#fff"/>
+                                        <rect y="9.25" width="22" height="1" rx="1.2" fill="#fff"/>
+                                        <rect y="14.5" width="22" height="1" rx="1.2" fill="#fff"/>
+                                    </svg>
+                                </div>
+                                Features
+                        </a>
         </div>
 
-        <div class="bottom-grid">
-            <a href="../Chatbot/chatbot.html" style="text-decoration:none; color:inherit;">
-                <div class="card">
-                    <h3>Connect Easily</h3>
-
-                    <div class="user-row">
-                        <div class="user-info">
-                            <div class="user-avatar"></div>
-                            <div>
-                                <div class="user-name">John Carter</div>
-                                <div class="user-desc">UI Designer</div>
-                            </div>
-                        </div>
-                        <div class="plus-btn">+</div>
-                    </div>
-
-                    <div class="user-row">
-                        <div class="user-info">
-                            <div class="user-avatar"></div>
-                            <div>
-                                <div class="user-name">Emma Watson</div>
-                                <div class="user-desc">Product Manager</div>
-                            </div>
-                        </div>
-                        <div class="plus-btn">+</div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="../Knowledge/knowledge.html" style="text-decoration:none; color:inherit;">
-                <div class="card">
-                    <h3>Digital Banking Platform!</h3>
-                    <div class="platform-image"></div>
-                    <div class="try-btn">TRY</div>
-                    <div class="app-icons">
-                        <div class="app-icon"></div>
-                        <div class="app-icon"></div>
-                        <div class="app-icon"></div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="what-to-buy-1.html" style="text-decoration:none; color:inherit;">
-                <div class="card">
-                    <div class="tag">Top rated App</div>
-                    <div class="tag">Revolutionary</div>
-                    <div class="coin-placeholder"></div>
-                    <h3>Grow your capital with<br>No boundary at all</h3>
-                    <p class="small">Trusted by millions of users globally for secure digital transactions.</p>
-                </div>
-            </a>
-        </div>
-
-    </div>
-    <!-- sidebar -->
-    <!-- OVERLAY -->
-    <div id="sidebarOverlay"></div>
-
-    <!-- SIDEBAR -->
-    <div id="accountSidebar">
-        <div class="sidebar-content">
-            <div class="profile-section">
-                <div class="profile-img"></div>
-                <h3>Hello, XYZ</h3>
-            </div>
-
-            <div class="sidebar-buttons">
-                <button>Edit Account</button>
-                <button>Edit Expenses</button>
-                <button class="logout">Logout</button>
-            </div>
+        <div class="nav-right">
+            <button class="btn-primary" id = "openAccountBtn">Open Account</button>
+            <div class="btn-arrow">→</div>
         </div>
     </div>
 
-    <!-- footer -->
-    <div class="footer">
-        <div class="footer-container">
-            <div class="footer-about">
-                <h2>About Banking</h2>
-                <p>
-                    Banking is a next-generation digital finance platform designed
-                    to give you full control over your money. Secure, fast, and
-                    built for the future of financial freedom.
-                </p>
-            </div>
-
-            <div class="footer-links">
-                <h3>Company</h3>
-                <ul>
-                    <li>About Us</li>
-                    <li>Careers</li>
-                    <li>Blog</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-
-            <div class="footer-links">
-                <h3>Support</h3>
-                <ul>
-                    <li>Help Center</li>
-                    <li>Privacy Policy</li>
-                    <li>Terms of Service</li>
-                    <li>Security</li>
-                </ul>
-            </div>
-
-            <div class="footer-newsletter">
-                <h3>Stay Updated</h3>
-                <div class="newsletter-box">
-                    <input type="email" placeholder="Enter your email">
-                    <button>Subscribe</button>
+    <div class="hero">
+        <div class="hero-card">
+            <div>
+                <h1>Track , Improve ,<br>Master Your <br> Financial Score.</h1>
+                <p>Your financial score reflects your money habits and stability.
+Get instant analysis and smart recommendations to grow financially.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary">Get Score</button>
                 </div>
             </div>
-
+            
         </div>
 
-        <div class="footer-bottom">
-            © 2026 Banking. All rights reserved.
+        <div class="hero-image">
+    <div class="slider">
+        <img src="rbi.jpeg" class="slide active">
+        <img src="sbi.jpeg" class="slide">
+        <img src="union.jpeg" class="slide">
+    </div>
+</div>
+    </div>
+
+    <div class="bottom-grid">
+        <div class="card" id="card1" style="display: flex; flex-direction: column; align-items: flex-start; min-height: 170px;">
+            <h3 style="margin-bottom: 8px;">FinSarthi Chatbot</h3>
+            <p style="margin-bottom: 0;">Ask. Learn. Grow.<br>
+            FinSarthi simplifies finance and helps you take confident financial decisions.</p>
+            <button class="chatbot-btn" aria-label="Open Chatbot" style="margin-top: 22px;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="12" cy="11" r="1"/><circle cx="17" cy="11" r="1"/><circle cx="7" cy="11" r="1"/></svg>
+            </button>
+        </div>
+
+
+        
+
+        <div class="card" id="card2">
+            <h3>Know About Finance</h3>
+            <button class="btn-primary">Learn More</button>
+        </div>
+
+        <div class="card" id="card3">
+            <h3>What To Buy ?</h3>
+            <button class="btn-primary">Explore Options</button>
         </div>
     </div>
-    <script>
-        const openBtn = document.getElementById("openAccountBtn");
-        const sidebar = document.getElementById("accountSidebar");
-        const overlay = document.getElementById("sidebarOverlay");
 
-        openBtn.addEventListener("click", () => {
-            sidebar.classList.add("active");
-            overlay.classList.add("active");
-        });
+</div>
+<!-- sidebar -->
+<!-- OVERLAY -->
+<div id="sidebarOverlay"></div>
 
-        overlay.addEventListener("click", () => {
-            sidebar.classList.remove("active");
-            overlay.classList.remove("active");
-        });
-    </script>
-</body>
+<!-- SIDEBAR -->
+<div id="accountSidebar">
+    <div class="sidebar-content">
+        <div class="profile-section">
+            <div class="profile-img"></div>
+            <h3>Hello, XYZ</h3>
+        </div>
 
-</html>
+        <div class="sidebar-buttons">
+            <button>Edit Account</button>
+            <button>Edit Expenses</button>
+            <button class="logout">Logout</button>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="footer" id="footer"> <div class="footer-container">
+    <div class="footer-about">
+        <h2>About Banking</h2>
+        <p>
+            Banking is a next-generation digital finance platform designed
+            to give you full control over your money. Secure, fast, and
+            built for the future of financial freedom.
+        </p>
+    </div>
+
+    <div class="footer-links">
+        <h3>Company</h3>
+        <ul>
+            <li>About Us</li>
+            <li>Careers</li>
+            <li>Blog</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="footer-links">
+        <h3>Support</h3>
+        <ul>
+            <li>Help Center</li>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+            <li>Security</li>
+        </ul>
+    </div>
+
+    <div class="footer-newsletter">
+        <h3>Stay Updated</h3>
+        <div class="newsletter-box">
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer-bottom">
+    © 2026 Banking. All rights reserved.
+</div>
+</div>
+<script>
+const openBtn = document.getElementById("openAccountBtn");
+const sidebar = document.getElementById("accountSidebar");
+const overlay = document.getElementById("sidebarOverlay");
+
+openBtn.addEventListener("click", () => {
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+});
+
+overlay.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+});
+</script>
+
+<script>
+// Reload page when Home is clicked
+document.getElementById('homeReloadBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.reload();
+});
+
+// Simple slider logic
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove("active");
+
+    index++;
+    if (index >= slides.length) {
+        index = 0;
+    }
+
+    slides[index].classList.add("active");
+}, 3000);
+</script>
+</body> </html>
