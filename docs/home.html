@@ -678,7 +678,7 @@ Get instant analysis and smart recommendations to grow financially.</p>
             <h3 style="margin-bottom: 8px;">FinSarthi Chatbot</h3>
             <p style="margin-bottom: 0;">Ask. Learn. Grow.<br>
             FinSarthi simplifies finance and helps you take confident financial decisions.</p>
-            <button class="chatbot-btn" aria-label="Open Chatbot" style="margin-top: 22px;">
+            <button class="chatbot-btn" id="chatbotCardBtn" aria-label="Open Chatbot" style="margin-top: 22px;">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="12" cy="11" r="1"/><circle cx="17" cy="11" r="1"/><circle cx="7" cy="11" r="1"/></svg>
             </button>
         </div>
@@ -764,6 +764,9 @@ Get instant analysis and smart recommendations to grow financially.</p>
 </div>
 </div>
 <script>
+    // Redirect to chat.html when chatbot button is clicked
+document.getElementById('chatbotCardBtn').addEventListener('click', function() {
+    window.location.href = 'chatbot.html';
 const openBtn = document.getElementById("openAccountBtn");
 const sidebar = document.getElementById("accountSidebar");
 const overlay = document.getElementById("sidebarOverlay");
