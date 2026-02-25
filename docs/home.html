@@ -693,7 +693,7 @@ Get instant analysis and smart recommendations to grow financially.</p>
 
         <div class="card" id="card3">
             <h3>What To Buy ?</h3>
-            <button class="btn-primary">Explore Options</button>
+            <button class="btn-primary" id="exploreOptionsBtn">Explore Options</button>
         </div>
     </div>
 
@@ -803,6 +803,10 @@ document.getElementById('unionImg').addEventListener('click', function() {
 });
 
 // Connect Get Score button to category.html
+// Connect Explore Options button to what-to-buy-1.html
+document.getElementById('exploreOptionsBtn').addEventListener('click', function() {
+    window.location.href = 'what-to-buy-1.html';
+});
 document.getElementById('getScoreBtn').addEventListener('click', function() {
     window.location.href = 'category.html';
 });

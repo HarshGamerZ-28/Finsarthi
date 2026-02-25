@@ -250,7 +250,7 @@ input:focus {
             <option value="5">5 Years Plan</option>
         </select>
         
-        <button class="proceed">Proceed</button>
+        <button class="proceed" id="proceedBtn">Proceed</button>
     </div>
 </div>
 
@@ -265,6 +265,10 @@ input:focus {
 </div>
 
 <script>
+// Connect Proceed button to what-to-buy-2.html
+document.getElementById('proceedBtn').addEventListener('click', function() {
+    window.location.href = 'what-to-buy-2.html';
+});
 // SIDEBAR LOGIC
 function openSidebar(){
     let loc = document.getElementById("location").value;
