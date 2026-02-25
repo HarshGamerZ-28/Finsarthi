@@ -666,9 +666,9 @@ Get instant analysis and smart recommendations to grow financially.</p>
 
         <div class="hero-image">
     <div class="slider">
-        <img src="rbi.jpeg" class="slide active">
-        <img src="sbi.jpeg" class="slide">
-        <img src="union.jpeg" class="slide">
+        <img src="rbi.jpeg" class="slide active" id="rbiImg">
+        <img src="sbi.jpeg" class="slide" id="sbiImg">
+        <img src="union.jpeg" class="slide" id="unionImg">
     </div>
 </div>
     </div>
@@ -791,6 +791,17 @@ Get instant analysis and smart recommendations to grow financially.</p>
 </script>
 
 <script>
+// Add click handlers for scheme images
+document.getElementById('rbiImg').addEventListener('click', function() {
+    window.location.href = 'scheme-rbi.html';
+});
+document.getElementById('sbiImg').addEventListener('click', function() {
+    window.location.href = 'scheme-sbi.html';
+});
+document.getElementById('unionImg').addEventListener('click', function() {
+    window.location.href = 'scheme-union.html';
+});
+
 // Reload page when Home is clicked
 document.getElementById('homeReloadBtn').addEventListener('click', function(e) {
     e.preventDefault();
