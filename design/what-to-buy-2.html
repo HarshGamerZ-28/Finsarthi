@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What to buy?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0F0F1A, #1A0F2E, #2A0F45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+        }
+
+        .main-box {
+            width: 85%;
+            min-height: 80vh;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(14px);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 50px;
+            transition: 0.4s ease;
+            box-shadow: 0 20px 60px rgba(168, 85, 247, 0.25);
+        }
+
+        .main-box:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 80px rgba(168, 85, 247, 0.4);
+        }
+
+        .content-area {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #E5E7EB;
+        }
+
+        @media (max-width: 768px) {
+            .main-box {
+                width: 95%;
+                padding: 30px;
+            }
+        }
+        .back-btn {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: 0.3s ease;
+            z-index: 2;
+        }
+
+        .back-btn:hover {
+            background: rgba(168, 85, 247, 0.4);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-box">
+        <div class="content-area">
+            <!-- Write your content here -->
+            Your content goes here...
+        </div>
+    </div>
+
+    <button class="back-btn" onclick="history.back()">← Back</button>
+
+</body>
+</html>
