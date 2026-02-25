@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinSarthi x RBI - Government Bonds & Schemes</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box;}
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0d1b2a, #1b263b, #000814);
+            color: white;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Updated Circular RBI Logo Styling --- */
+        .rbi-logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white; /* Background white rakha hai taaki logo saaf dikhe */
+            border-radius: 50%; /* Isse logo circular ho jayega */
+            border: 4px solid #ffd700; /* Golden border */
+            overflow: hidden; /* Jo hissa circle se bahar hai wo kat jayega */
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); /* Neon Glow */
+        }
+
+        .rbi-logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Image ko circle mein fit karne ke liye */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(to right, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .schemes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            border-color: #ffd700;
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.15);
+        }
+
+        .card h3 {
+            color: #ffd700;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .interest-rate {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 15px 0;
+            color: #fff;
+        }
+
+        .interest-rate span {
+            font-size: 1rem;
+            color: #aaa;
+        }
+
+        .details {
+            font-size: 0.95rem;
+            color: #ccc;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            background: linear-gradient(135deg, #ffd700, #b8860b);
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 800;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 60px;
+            color: #555;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="rbi-logo-container">
+            <img src="rbi.png" alt="RBI Official Logo">
+        </div>
+        <h1>RBI Retail Direct</h1>
+        <p style="color: #aaa; margin-top: 10px;">Direct access to Government Securities for Retail Investors</p>
+    </header>
+
+    <div class="schemes-grid">
+        <div class="card">
+            <div>
+                <h3>Sovereign Gold Bonds</h3>
+                <div class="interest-rate">2.5% <span>+ Gold Gains</span></div>
+                <p class="details">Invest in gold digitally. Get fixed interest twice a year plus the market appreciation of gold. Zero storage risk and tax benefits.</p>
+            </div>
+            <!-- <a href="#" class="btn" style="text-decoration: none;">Invest Now</a> -->
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Floating Rate Bonds</h3>
+                <div class="interest-rate">8.05% <span>p.a.</span></div>
+                <p class="details">A safe investment where interest rates are reset every 6 months. Currently linked to NSC rates plus 0.35% spread.</p>
+            </div>
+            <!-- <a href="#" class="btn" style="text-decoration: none;">View Rates</a> -->
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Treasury Bills</h3>
+                <div class="interest-rate">Variable <span>Short-term</span></div>
+                <p class="details">Short-term debt instruments issued by the Govt of India for 91, 182, or 364 days. Highly liquid and safe.</p>
+            </div>
+            <!-- <a href="#" class="btn" style="text-decoration: none;">Buy T-Bills</a> -->
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>State Loans (SDLs)</h3>
+                <div class="interest-rate">7.4% - 7.8% <span>p.a.</span></div>
+                <p class="details">Invest in the development of Indian states. Offers higher yields than Central Govt bonds with sovereign-like safety.</p>
+            </div>
+            <!-- <a href="#" class="btn" style="text-decoration: none;">Explore SDLs</a> -->
+        </div>
+    </div>
+
+    <p class="footer-text">© 2026 FinSarthi. Information provided is for educational purposes based on RBI guidelines.</p>
+</div>
+
+</body>
+</html>
