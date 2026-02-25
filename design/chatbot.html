@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finsarthi Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Flowing Coins Background -->
+    <div class="coins"></div>
+
+    <!-- Homepage Content -->
+    <div class="homepage">
+        <h1>Hello!</h1>
+        <p>Track expenses. Monitor savings.<br>Achieve financial freedom.</p>
+        <button id="chatBtn">💬 Chat Now</button>
+        <p class="secure">Secure • Fast • Reliable</p>
+    </div>
+
+    <!-- Full Chat Screen (hidden initially) -->
+    <div class="chat-screen" id="chatScreen">
+        <div class="chat-header">
+    <div class="header-left">
+        <button id="menuBtn" class="icon-btn">☰</button>
+        <h2>Finsarthi Chat</h2>
+    </div>
+    <button id="closeChat" class="icon-btn">✖</button>
+</div>
+      <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <button id="newChatBtn">+ New Chat</button>
+    </div>
+    <div class="chat-history" id="chatHistory">
+        <p class="history-title">Your Chats</p>
+    </div>
+</div>
+        <div class="chat-body" id="chatBody">
+            <!-- Messages will appear here -->
+        </div>
+       <div class="chat-input">
+    <span class="attach-icon">📎</span>
+    <input type="text" id="userInput" placeholder="Type a message...">
+    <button id="sendBtn" class="send-icon">➤</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
