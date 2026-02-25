@@ -765,21 +765,24 @@ Get instant analysis and smart recommendations to grow financially.</p>
 </div>
 <script>
     // Redirect to chat.html when chatbot button is clicked
-document.getElementById('chatbotCardBtn').addEventListener('click', function() {
-    window.location.href = 'chatbot.html';
-const openBtn = document.getElementById("openAccountBtn");
-const sidebar = document.getElementById("accountSidebar");
-const overlay = document.getElementById("sidebarOverlay");
+        document.getElementById('chatbotCardBtn').addEventListener('click', function() {
+            window.location.href = 'chatbot.html';
+        });
 
-openBtn.addEventListener("click", () => {
-    sidebar.classList.add("active");
-    overlay.classList.add("active");
-});
+        // Sidebar logic
+        const openBtn = document.getElementById("openAccountBtn");
+        const sidebar = document.getElementById("accountSidebar");
+        const overlay = document.getElementById("sidebarOverlay");
 
-overlay.addEventListener("click", () => {
-    sidebar.classList.remove("active");
-    overlay.classList.remove("active");
-});
+        openBtn.addEventListener("click", () => {
+            sidebar.classList.add("active");
+            overlay.classList.add("active");
+        });
+
+        overlay.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
+        });
 </script>
 
 <script>
