@@ -658,7 +658,7 @@ grid-template-columns: 1fr;
                 <p>Your financial score reflects your money habits and stability.
 Get instant analysis and smart recommendations to grow financially.</p>
                 <div class="hero-actions">
-                    <button class="btn-primary">Get Score</button>
+                    <button class="btn-primary" id="getScoreBtn">Get Score</button>
                 </div>
             </div>
             
@@ -800,6 +800,11 @@ document.getElementById('sbiImg').addEventListener('click', function() {
 });
 document.getElementById('unionImg').addEventListener('click', function() {
     window.location.href = 'scheme-union.html';
+});
+
+// Connect Get Score button to category.html
+document.getElementById('getScoreBtn').addEventListener('click', function() {
+    window.location.href = 'category.html';
 });
 
 // Reload page when Home is clicked
