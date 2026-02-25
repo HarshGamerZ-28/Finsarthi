@@ -242,15 +242,16 @@ input:focus {
 
         <input id="location" type="text" placeholder="Enter Your City/Location (e.g. Mumbai, Delhi)">
 
-        <select id="years">
-            <option value="1">1 Year Plan</option>
-            <option value="2">2 Years Plan</option>
-            <option value="3">3 Years Plan</option>
-            <option value="4">4 Years Plan</option>
-            <option value="5">5 Years Plan</option>
-        </select>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <input id="durationValue" type="number" min="1" placeholder="Enter number" style="width: 120px; padding: 8px; border-radius: 8px; border: 1px solid #00fff7; color: #fff; font-size: 1rem;">
+            <select id="durationUnit" style="padding: 8px; border-radius: 8px; border: 1px solid #00fff7; color: #fff; font-size: 1rem;">
+                <option value="years">Years</option>
+                <option value="months">Months</option>
+            </select>
+        </div>
         
-        <button class="proceed" id="proceedBtn">Proceed</button>
+        
+        <button class="proceed">Proceed</button>
     </div>
 </div>
 
@@ -265,10 +266,6 @@ input:focus {
 </div>
 
 <script>
-// Connect Proceed button to what-to-buy-2.html
-document.getElementById('proceedBtn').addEventListener('click', function() {
-    window.location.href = 'what-to-buy-2.html';
-});
 // SIDEBAR LOGIC
 function openSidebar(){
     let loc = document.getElementById("location").value;
